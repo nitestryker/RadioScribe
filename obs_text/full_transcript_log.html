@@ -1,0 +1,82 @@
+<!doctype html>
+<html><head><meta charset='utf-8'>
+<style>
+  :root {
+    --bg: #1a1a2e;
+    --bubble: rgba(255,255,255,0.08);
+    --text: #ffffff;
+  }
+  html, body {
+    margin: 0; padding: 20px;
+    background: var(--bg);
+    font-family: Arial, sans-serif;
+    color: var(--text);
+  }
+  .stage { width: 100%; }
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .block {
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    border-left: 4px solid #4a9eff;
+  }
+  .ts { font-size: 14px; opacity: 0.7; margin-bottom: 8px; font-weight: 600; color: #88aaff; }
+  .line { font-size: 16px; line-height: 1.4; margin: 0 0 4px 0; }
+  .lookupline { margin-top: 8px; padding: 8px 12px; border-radius: 6px; background: rgba(0,255,150,0.1); font-size: 14px; }
+  .hl { padding: 2px 6px; border-radius: 4px; font-weight: 700; }
+  .hl.alert { background: rgba(255, 0, 0, 0.35); color: #ff6b6b; }
+  .hl.unit { background: rgba(255, 140, 0, 0.22); color: #ffd08a; }
+  .hl.ten { background: rgba(255, 255, 0, 0.20); color: #fff59d; }
+  .hl.loc { background: rgba(200, 150, 255, 0.15); color: #ce93d8; }
+  .hl.lookup { background: rgba(0, 255, 120, 0.15); color: #69f0ae; }
+  
+  .hl.warn { background: rgba(255, 140, 0, 0.25); color: #ffb84d; }
+  .hl.uncertain { background: rgba(255, 255, 0, 0.25); color: #ffff66; }
+
+  
+  .replay {
+    float: right;
+    font-size: 14px;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 2px 6px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .replay:hover {
+    background: #555;
+  }
+
+  .hl.case { background: rgba(255, 180, 0, 0.2); color: #ffb74d; }
+
+  .hl.plate { background: rgba(0, 180, 255, 0.18); color: #81d4fa; }
+  .hl.name { background: rgba(0, 255, 120, 0.15); color: #69f0ae; }
+
+  .badge{display:inline-block; padding:0 8px; margin-right:6px; border-radius:999px; background:rgba(255,255,255,0.10); font-weight:800;}
+  .badge.unit{background:rgba(255,255,255,0.10)}
+  .badge.speaker.D{background:rgba(0,180,255,0.18)}
+  .badge.speaker.O{background:rgba(255,140,0,0.18)}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);}}
+  .line{animation:fadeIn 0.3s ease-in;}
+</style>
+</head><body>
+<script>
+(function(){
+  function pinBottom(){
+    try {
+      window.scrollTo(0, document.body.scrollHeight);
+    } catch(e){}
+  }
+  pinBottom();
+  setInterval(pinBottom, 250);
+  setInterval(function(){
+    location.reload();
+  }, 1500);
+})();
+</script>
+</body></html>

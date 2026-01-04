@@ -1,0 +1,19 @@
+# Core runtime deps
+numpy>=1.26
+sounddevice>=0.4.6
+websockets>=12.0
+
+# Local ASR (Deepgram replacement)
+faster-whisper>=1.1.1
+
+# LocalCorrector training/inference
+torch
+transformers>=4.41.0
+datasets>=2.18.0
+peft>=0.11.0
+accelerate>=0.30.0
+sentencepiece>=0.2.0
+safetensors>=0.4.3
+
+# Quality-of-life
+tqdm>=4.66.0
